@@ -12,6 +12,7 @@ android {
     defaultConfig {
         applicationId "com.example.paging3demo"
         minSdk 21
+        //noinspection OldTargetApi
         targetSdk 31
         versionCode 1
         versionName "1.0"
@@ -21,7 +22,7 @@ android {
             useSupportLibrary true
         }
 
-       buildConfigField("String", "API_KEY", API_KEY)
+        buildConfigField("String", "API_KEY", API_KEY)
     }
 
     buildTypes {
