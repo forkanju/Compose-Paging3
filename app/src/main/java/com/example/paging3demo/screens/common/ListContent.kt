@@ -40,6 +40,7 @@ import androidx.core.content.ContextCompat.startActivity
 import androidx.paging.ExperimentalPagingApi
 import androidx.paging.compose.LazyPagingItems
 import androidx.paging.compose.items
+import coil.annotation.ExperimentalCoilApi
 import coil.compose.rememberImagePainter
 import com.example.paging3demo.R
 import com.example.paging3demo.model.UnsplashImage
@@ -48,6 +49,7 @@ import com.example.paging3demo.model.User
 import com.example.paging3demo.model.UserLinks
 import com.example.paging3demo.ui.theme.HeartRed
 @ExperimentalPagingApi
+@ExperimentalCoilApi
 @Composable
 fun ListContent(items: LazyPagingItems<UnsplashImage>) {
 
@@ -71,6 +73,7 @@ fun ListContent(items: LazyPagingItems<UnsplashImage>) {
 }
 
 @ExperimentalPagingApi
+@ExperimentalCoilApi
 @Composable
 fun UnsplashItem(unsplashImage: UnsplashImage) {
     val painter = rememberImagePainter(data = unsplashImage.urls.regular) {
@@ -161,6 +164,7 @@ fun LikeCounter(
 }
 
 @ExperimentalPagingApi
+@ExperimentalCoilApi
 @Preview
 @Composable
 fun UnsplashImagePreview() {

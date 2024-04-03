@@ -110,4 +110,13 @@ class UnsplashRemoteMediator(
     }
 
 
+    private suspend fun getRemoteKeyForLastItem2(
+        state: PagingState<Int, UnsplashImage>
+    ): UnsplashRemoteKeys? {
+        return state.pages.lastOrNull { it.data.isNotEmpty() }?.data?.lastOrNull()
+            ?.let { unsplashImage ->
+                unsplashRemoteKeysDao.getRemoteKeys(id = unsplashImage.id)
+            }
+    }
+
 }
